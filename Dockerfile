@@ -29,8 +29,6 @@ conda install matplotlib.pyplot as plt
 # Install seaborn package
 conda install seaborn as sns
 
-# Install 
-
 # Copy JupyterLab start-up script into container
 COPY start-notebook.sh /usr/local/bin/
 

@@ -38,4 +38,4 @@ jobs:
         name: isabelalucas/dockerfile-practice # change this to your DockerHub username and repository
         username: ${{ secrets.isabelal }} # you need to add your Docker username to this GitHub repo as a secret
         password: ${{ secrets.belinha1058 }} # you need to add your Docker password to this GitHub repo as a secret
-        tags: "latest,${{ steps.bump.outputs.new_tag }}"
+        tags: "latest,${{ steps.bump.outputs.docker_tag }}"

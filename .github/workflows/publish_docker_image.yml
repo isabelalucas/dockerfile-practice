@@ -15,7 +15,7 @@ jobs:
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.33.0
       env:
-        GITHUB_TOKEN: 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
+        GITHUB_TOKEN: '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'
         WITH_V: true
         RELEASE_BRANCHES: main
       id: bump

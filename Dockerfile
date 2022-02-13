@@ -23,11 +23,11 @@ RUN apt-get update --yes && \
     nano-tiny \
     less
 
-# Install MySQL package version 1.2.2
-RUN conda install MySQL_python==1.2.2
+# Install ggplot2
+RUN conda install ggplot2==3.3.5
 
-# Install numpy package version 1.18.1
-RUN conda install numpy==1.18.1
+# Install tidyverse
+RUN conda install tidyverse==1.3.1
 
 # Copy JupyterLab start-up script into container
 COPY start-notebook.sh /usr/local/bin/

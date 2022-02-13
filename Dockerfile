@@ -23,10 +23,10 @@ RUN apt-get update --yes && \
     nano-tiny \
     less
 
-# Install MySQL package
+# Install MySQL package version 1.2.2
 RUN conda install MySQL_python==1.2.2
 
-# Install numpy package
+# Install numpy package version 1.18.1
 RUN conda install numpy==1.18.1
 
 # Copy JupyterLab start-up script into container

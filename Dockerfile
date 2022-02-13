@@ -24,10 +24,10 @@ RUN apt-get update --yes && \
     less
 
 # Install matplotlib package
-conda install matplotlib.pyplot as plt
+conda install matplotlib.pyplot 
 
 # Install seaborn package
-conda install seaborn as sns
+conda install seaborn
 
 # Copy JupyterLab start-up script into container
 COPY start-notebook.sh /usr/local/bin/

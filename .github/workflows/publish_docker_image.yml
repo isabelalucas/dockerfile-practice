@@ -15,7 +15,7 @@ jobs:
     - name: Bump version and push tag
       uses: anothrNick/github-tag-action@1.33.0
       env:
-        GITHUB_TOKEN: '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'
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         RELEASE_BRANCHES: main
       id: bump
@@ -25,8 +25,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: ${{ steps.bump.outputs.latest }}
-        release_name: ${{ steps.bump.outputs.latest }}
+        tag_name: ${{ steps.bump.outputs.new_tag }}
+        release_name: ${{ steps.bump.outputs.new_tag }}
         body: |
           Changes in this Release
           - Rebuilt Docker image and published to DockerHub with new tag
@@ -36,6 +36,6 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: isabelalucas/dockerfile-practice # change this to your DockerHub username and repository
-        username: ${{ secrets.isabelal }} # you need to add your Docker username to this GitHub repo as a secret
-        password: ${{ secrets.belinha1058 }} # you need to add your Docker password to this GitHub repo as a secret
-        tags: "latest,${{ steps.bump.outputs.latest }}"
+        username: ${{ secrets.DOCKER_USERNAME }} # you need to add your Docker username to this GitHub repo as a secret
+        password: ${{ secrets.DOCKER_PASSWORD }} # you need to add your Docker password to this GitHub repo as a secret
+        tags: "latest,${{ steps.bump.outputs.new_tag }}"

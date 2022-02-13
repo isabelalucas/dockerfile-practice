@@ -23,11 +23,11 @@ RUN apt-get update --yes && \
     nano-tiny \
     less
 
-# Install matplotlib package
-RUN conda install matplotlib.pyplot 
+# Install MySQL package
+RUN conda install MySQL_python==1.2.2
 
-# Install seaborn package
-RUN conda install seaborn
+# Install numpy package
+RUN conda install numpy==1.18.1
 
 # Copy JupyterLab start-up script into container
 COPY start-notebook.sh /usr/local/bin/

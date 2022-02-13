@@ -26,7 +26,7 @@ RUN apt-get update --yes && \
 # Install ggplot2
 RUN conda install ggplot2==3.3.5
 
-# Install tidyverse
+# Install tidyverse 
 RUN conda install tidyverse==1.3.1
 
 # Copy JupyterLab start-up script into container
@@ -38,3 +38,5 @@ ENTRYPOINT ["/usr/local/bin/start-notebook.sh"]
 
 # Switch to staring in directory where volumes will be mounted
 WORKDIR "/opt/notebooks"
+
+# test comment

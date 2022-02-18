@@ -23,11 +23,8 @@ RUN apt-get update --yes && \
     nano-tiny \
     less
 
-# Install ggplot2
-RUN conda install ggplot2==3.3.5
-
 # Install tidyverse 
-RUN conda install tidyverse==1.3.1
+RUN conda install r-tidyverse=1.3.1
 
 # Copy JupyterLab start-up script into container
 COPY start-notebook.sh /usr/local/bin/
